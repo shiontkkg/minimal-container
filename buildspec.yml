@@ -8,7 +8,7 @@ phases:
       - curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
       - yum install -y java-17-amazon-corretto-devel
       - alternatives --display java
-      - alternatives --set java-17-amazon-corretto-devel
+      - alternatives --set /usr/lib/jvm/java-17-amazon-corretto/bin/java
       - java -version
   build:
     commands:
