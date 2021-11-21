@@ -4,7 +4,8 @@ phases:
   install:
     commands:
       - java -version
-      - amazon-linux-extras enable corretto17
+      - rpm --import https://yum.corretto.aws/corretto.key
+      - curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
       - yum install -y java-17-amazon-corretto-devel
       - java -version
   build:
