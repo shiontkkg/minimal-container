@@ -2,8 +2,11 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto17
+    commands:
+      - java -version
+      - amazon-linux-extras enable corretto17
+      - yum install -y java-17-amazon-corretto-devel
+      - java -version
   build:
     commands:
       - ls -l
