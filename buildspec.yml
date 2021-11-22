@@ -9,6 +9,7 @@ phases:
       - yum install -y java-17-amazon-corretto-devel
       - alternatives --display java
       - alternatives --set java /usr/lib/jvm/java-17-amazon-corretto/bin/java
+      - alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
       - java -version
   build:
     commands:
