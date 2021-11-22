@@ -11,6 +11,7 @@ phases:
       - alternatives --set java /usr/lib/jvm/java-17-amazon-corretto/bin/java
       - alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
       - java -version
+      - echo $JAVA_HOME
   build:
     commands:
       - ls -l
