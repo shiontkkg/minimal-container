@@ -20,7 +20,8 @@ phases:
       - chmod +x gradlew
       - ./gradlew bootJar
       - ls -l build/libs/
-      - mv build/libs/minimal-container-*.jar minimal-container.jar
+      - mv build/libs/minimal-container-*.jar docker/minimal-container.jar
+      - cd docker/
       - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 320979466941.dkr.ecr.ap-northeast-1.amazonaws.com
       - docker build -t minimal-container:latest .
       - docker tag shiontkkg/minimal-container:latest 320979466941.dkr.ecr.ap-northeast-1.amazonaws.com/minimal-container:latest
